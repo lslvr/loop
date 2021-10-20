@@ -5,8 +5,8 @@
 
 ## Installation.
 
-`loop` is available through [`shop`](https://github.com/Nitrux/bcf).
-Otherwise just drop it into your `$PATH`. ;)
+`loop` is available through [`shop`](https://github.com/Nitrux/shop).
+Otherwise just drop it into your `$PATH`. _;)_
 
 
 ## Usage.

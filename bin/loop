@@ -1,0 +1,20 @@
+#! /bin/bash
+
+
+while :; do
+    case "$1" in
+        ( -n )  l_loops=$2; shift 2;;
+        ( -s )  l_sleep=$2; shift 2;;
+        ( '' )  echo "loop [-n iterations] [-s sleep_seconds] [--] cmd [args]"; exit 1;;
+        ( -- )  shift; break;;
+        ( * )   break;;
+    esac
+done
+
+
+l_sleep=${l_sleep:+l_sleep ${l_sleep}}
+
+case "$l_loops" in
+    ( '' )  while :; do eval "$*"; $l_sleep; done;;
+    ( * )   for _ in $(eval "echo {1..$l_loops}"); do eval "$*"; $l_sleep; done;;
+esac
